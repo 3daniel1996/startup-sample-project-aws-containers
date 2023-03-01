@@ -11,8 +11,8 @@ generate "remote_state" {
   contents  = <<EOF
 terraform {
   backend "s3" {
-    bucket         = "terraform-remote-state-${ local.project }-${ local.environment }"
-    key            = "${ local.project }/${ local.environment }/containers-app.tfstate"
+    bucket         = "terraform-remote-state-tmp-${ local.project }-${ local.environment }"
+    key            = "${ local.project }/${ local.environment }/tmp-containers-app.tfstate"
     dynamodb_table = "terraform-remote-state-lock-${ local.project }"
   }
 }
